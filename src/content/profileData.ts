@@ -1,55 +1,74 @@
 export const PROFILE = {
   site: {
     SEO: {
-      //     more complicated description for SEO
-      title: "Tech Tim (@TechTim42) - Learn, Share and Grow ❤️",
-      description:
-        "Learn, Share and Grow ❤️ -- Software Engineer | AWS Professional | Open Source Lover  --☘️ Be more productive, Better in communicating, Contribute more to community. | Tech Tim's New Astro Portfolio",
+      title: "Welcome to TV ☺️",
+      description: "",
     },
   },
-  timezone: "Australia/Sydney",
-  language: "en-AU",
-  firstName: "Tim",
-  name: "Tech Tim",
-  headLine: "Learn, Share and Grow ❤️",
-  headLine2:
-    "I enjoy providing software solutions and bring ideas to life and solve real-world problems.",
-  website: "https://techtim42.com",
-  repo: "https://github.com/tim-hub/techtim-astro-bento-portfolio",
-  avatarUrl: "https://techtim42.com/techtim42.webp",
+  timezone: "Asia/Yerevan",
+  language: "en-US",
+  firstName: "Taron",
+  lastName: "Vanoyan",
+  name: "Taron",
+  // headLine: "Learn, Share and Grow ️",
+  // headLine2: "I enjoy providing software solutions and bring ideas to life and solve real-world problems.",
+  website: "",
+  repo: "https://github.com/tarondev7",
+  avatarUrl: "/user.png",
+  cv: {
+    filename: "Taron_Vanoyan_CV",
+    path: "https://drive.google.com/file/d/1mBMuMCeagerPTMwxR4-olu5n3YaqKaNf/view?usp=drive_link"
+  },
   shortIntros: [
-    "💻 Software/AI Engineer | Open Source Lover | Self-starter",
-    "☁️ AWS Professional | AWS Community Builder",
-    "☘️ Passionate about Dev Experience(DX) Improvement and bringing ideas to life",
-    "📈 Unprofessional Investor",
-    "🌱 Part-time blogger and unprofessional Youtuber",
-    "📚 Book reader | 🥏 Frisbee Ultimate Player | 🎲 Board Game Player",
+    "💻 Senior Frontend Developer",
+    "👨🏻‍💻 Experienced engineer with a demonstrated history of working in banking, medical insurance and gambling & casino industries. Significant experience working with React and Angular web and mobile (RN/Ionic) along with tools like Flux, Flow, Redux, etc. Leverage technical, analytical, and problem-solving skills to create dynamic, high-speed websites, apps and platforms fueling competitive advantage."
+    // "👨🏻‍💻 A Frontend Developer who loves crafting intuitive and visually stunning web interfaces",
+    // "☘️ Passionate about Dev Experience(DX) Improvement and bringing ideas to life",
+    // "🏂 Snowboarding Enthusiast | 🚁 Drone Racing Fanatic | 📽️ Visual Storytelling Explorer",
+    // "☁️ AWS Professional | AWS Community Builder",
+    // "📈 Unprofessional Investor",
   ],
   words: ["As each one has received a gift, minister it to one another"],
-  skills: [
-    "Python / Django",
+  technologies: [
+    "HTML/CSS/SASS/LESS",
     "JavaScript",
     "Typescript",
-    "AWS",
-    "Cloud Computing",
-    "Kubernetes",
     "React",
+    "Angular",
+    "React Native",
+    "Ionic",
     "Node.js",
-    "Postgres",
-    "SQL",
     "Astro",
   ],
+  skills: [
+    "Flux/Flow",
+    "Redux",
+    "Angular Material",
+    "BEM",
+    "Agile",
+    "VCS",
+  ],
   links: {
-    github: "https://github.com/tim-hub",
-    medium: "https://medium.com/@TechTim42",
-    twitter: "https://twitter.com/TechTim42",
-    bluesky: "https://bsky.app/profile/techtim.bsky.social",
-    thread: "https://www.threads.net/@techtim2024",
-    mastodon: "https://mastodon.social/@techtim42",
-    youtube: "https://www.youtube.com/@techtim42",
-    stackoverflow: "https://stackoverflow.com/users/5249708/tim",
-    devto: "https://dev.to/timhub",
-    goodreads: "",
+    phone: {
+      title: "+37477442816",
+      url: "+37477442816",
+    },
+    linkedin: {
+      title: "taron-vanoyan",
+      url: "https://www.linkedin.com/in/taron-vanoyan",
+    },
+    gmail: {
+      title: "tarondev",
+      url: "tarondev@gmail.com",
+    },
+    github: {
+      title: "tarondev7",
+      url: "https://github.com/tarondev7"
+    },
+    telegram: {
+      title: "t_vanoyan",
+      url: "https://web.telegram.org/k/#@t_vanoyan"
+    }
   },
   studies: [
     // studies, qualifications and certifications

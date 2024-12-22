@@ -8,13 +8,15 @@ import IndexPageLayout from "../../layouts/IndexPageLayout.astro";
 // read mdx files from projects folder as entities
 const projects = await getCollection('projects');
 
+const projectsDescription = "Below are some of the recent projects I have worked on that are publicly available. These projects were built collaboratively, and I played a significant role in their development. Each description highlights my contributions and the skills I applied to deliver impactful solutions.";
+
 // sort projects by dateStart DESC
 projects.sort((a: any, b: any) => {
   return new Date(b.data.startDate) - new Date(a.data.startDate);
 });
 ---
 
-<IndexPageLayout title="Projects" description="Projects I have worked on recently." subTitle="My Projects">
+<IndexPageLayout title="Projects" description={projectsDescription} subTitle="My Projects">
   <div class="grid grid-cols-3 gap-3">
 
   {

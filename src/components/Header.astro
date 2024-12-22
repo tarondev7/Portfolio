@@ -2,6 +2,8 @@
 import {buttonVariants} from '../components/ui/button'
 import {ModeToggle} from '../components/react/ThemeToggle'
 import {PROFILE} from "../content/profileData";
+import { Button } from "./ui/button";
+import { ExternalLink } from "lucide-react";
 
 const SITE = PROFILE.site
 ---
@@ -14,17 +16,17 @@ const SITE = PROFILE.site
   >
     <div class="flex gap-6 md:gap-10">
       <a href="/" class="flex items-center space-x-2">
-        <span class="inline-block font-bold">{PROFILE.name}</span>
+        <span class="inline-block font-bold">{PROFILE.name} {PROFILE.lastName}</span>
       </a>
     </div>
     <div class="flex flex-1 items-center justify-end space-x-4">
       <nav class="flex items-center space-x-1">
-        <a
-          href="/posts"
-          class={buttonVariants({variant: 'ghost'})}
-        >
-          Blog
-        </a>
+        <!--<a-->
+        <!--  href="/posts"-->
+        <!--  class={buttonVariants({variant: 'ghost'})}-->
+        <!--&gt;-->
+        <!--  Blog-->
+        <!--</a>-->
         <a
           href="/projects"
           class={buttonVariants({variant: 'ghost'})}
@@ -37,7 +39,8 @@ const SITE = PROFILE.site
           rel="noreferrer"
           class={buttonVariants({variant: 'ghost'})}
         >
-          GitHub
+          <span class="mx-2">GitHub</span>
+          <ExternalLink size="15" />
         </a>
 
         <ModeToggle transition:persist client:load/>

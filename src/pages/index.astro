@@ -1,4 +1,5 @@
 ---
+import {Button} from '../components/ui/button'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import IntroCard from '../components/sections/IntroCard.astro'
 import AboutMe from '../components/sections/AboutMe.astro'
@@ -10,6 +11,8 @@ import Projects from '../components/sections/Projects.astro'
 import StudyCard from '../components/sections/StudyCard.astro'
 import { PROFILE } from "../content/profileData";
 import BlogCard from '../components/sections/BlogCard.astro'
+import { Github, Send, Mail, Phone, FileIcon, ExternalLink, LinkedinIcon } from 'lucide-react'
+
 const SITE = PROFILE.site
 ---
 
@@ -24,63 +27,104 @@ const SITE = PROFILE.site
     class="fixed top-0 right-0 bottom-0 left-0 z-50 flex h-screen w-screen items-center justify-center text-3xl font-black uppercase text-neutral-50 loader bg-darkslate-700"
   >
   </div>
-  <main
-    transition:animate="fade"
-    class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-12 lg:gap-4"
-  >
+  <main class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-12 lg:gap-4">
     <Card colSpan="lg:col-span-9 md:col-span-2" rowSpan="md:row-span-1 lg:row-span-4">
       <IntroCard/>
     </Card>
-    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-6" title="About me">
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-6" title="Tech stack">
       <AboutMe/>
     </Card>
 
     <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-4" title="Projects">
       <Projects/>
     </Card>
-
-    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2" title="Your time">
-      <TimeZoneCard/>
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-1" title="My CV">
+      <div class="flex items-center justify-between text-center my-2">
+        <a href={PROFILE.cv.path} target="_blank" download={PROFILE.cv.filename}>
+          <Button aria-label="phone">
+            <ExternalLink />
+            <span class="ml-4">Download</span>
+          </Button>
+        </a>
+      </div>
     </Card>
-    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2" title="My time">
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2" title="Contacts">
+      <div class="flex items-center justify-between text-center my-2">
+        <a href={'tel:' + PROFILE.links.phone.url} aria-label="phone number" target="_blank">
+          <Button aria-label="phone">
+            <Phone />
+            <span class="sr-only">Phone</span>
+          </Button>
+        </a>
+        <span>{PROFILE.links.phone.title}</span>
+      </div>
+      <div class="flex items-center justify-between text-center my-2">
+        <a href={PROFILE.links.linkedin.url} aria-label="linkedin" target="_blank">
+          <Button aria-label="linkedin">
+            <LinkedinIcon />
+            <span class="sr-only">Linkedin</span>
+          </Button>
+        </a>
+        <span>{PROFILE.links.linkedin.title}</span>
+      </div>
+      <div class="flex items-center justify-between text-center my-2">
+        <a href={'mailto:' + PROFILE.links.gmail.url} aria-label="gmail" target="_blank">
+          <Button aria-label="gmail">
+            <Mail />
+            <span class="sr-only">Gmail</span>
+          </Button>
+        </a>
+        <span>{PROFILE.links.gmail.title}</span>
+      </div>
+      <div class="flex items-center justify-between text-center my-2">
+        <a href={PROFILE.links.telegram.url} aria-label="telegram" target="_blank">
+          <Button aria-label="telegram">
+            <Send />
+            <span class="sr-only">Telegram</span>
+          </Button>
+        </a>
+        <span>{PROFILE.links.telegram.title}</span>
+      </div>
+      <!--<div class="flex items-center justify-between text-center my-2">-->
+      <!--  <a href={PROFILE.links.github.url} aria-label="github profile" target="_blank">-->
+      <!--    <Button aria-label="github profile">-->
+      <!--      <Github/>-->
+      <!--      <span class="sr-only">GitHub Profile</span>-->
+      <!--    </Button>-->
+      <!--  </a>-->
+      <!--  <span>{PROFILE.links.github.title}</span>-->
+      <!--</div>-->
+    </Card>
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-1" title="My time">
       <TimeZoneCard timezone={PROFILE.timezone} />
     </Card>
 
 
-    <Card colSpan="lg:col-span-4 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2">
-      <div class="flex h-full flex-col justify-between">
-        <blockquote class="mt-6 border-l-2 pl-6 italic">
-          “{PROFILE.words[0]}”
-        </blockquote>
-        <p class="mt-2 text-xs"></p>
-      </div>
-    </Card>
-    <Card colSpan="md:col-span-1 lg:col-span-5" rowSpan="md:row-span-2 lg:row-span-2"
-          title="Education and Certificates">
-      <StudyCard/>
-    </Card>
 
-    <Card colSpan="md:col-span-1 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Experiences">
+    <!--<Card colSpan="lg:col-span-4 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2">-->
+    <!--  <div class="flex h-full flex-col justify-between">-->
+    <!--    <blockquote class="mt-6 border-l-2 pl-6 italic">-->
+    <!--      “{PROFILE.words[0]}”-->
+    <!--    </blockquote>-->
+    <!--    <p class="mt-2 text-xs"></p>-->
+    <!--  </div>-->
+    <!--</Card>-->
+    <!--<Card colSpan="md:col-span-1 lg:col-span-5" rowSpan="md:row-span-2 lg:row-span-2"-->
+    <!--      title="Education and Certificates">-->
+    <!--  <StudyCard/>-->
+    <!--</Card>-->
+
+    <Card colSpan="md:col-span-1 lg:col-span-12" rowSpan="md:row-span-2 lg:row-span-2" title="Experiences">
       <ExperienceCard/>
     </Card>
 
 
-    <Card colSpan="md:col-span-1 lg:col-span-6" rowSpan="md:row-span-1 lg:row-span-1" title="Blog Posts">
-      <BlogCard/>
-    </Card>
-    <Card colSpan="md:col-span-1 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Books I read">
-      <Books/>
-    </Card>
-    <Card colSpan="md:col-span-1 lg:col-span-6" rowSpan="md:row-span-2 lg:row-span-1" title="Contact">
-      <div class="flex h-full w-full items-center justify-center text-center text-sm">
-        <i>
-          Please feel free to reach out to me through <a href={PROFILE.links.twitter} class="underline hover:font-bold">Twitter
-          message</a> or <a href={PROFILE.repo+'/issues'} class="underline hover:font-bold">Github issue</a>.
-        </i>
-      </div>
-    </Card>
-
-
+    <!--<Card colSpan="md:col-span-1 lg:col-span-6" rowSpan="md:row-span-1 lg:row-span-1" title="Blog Posts">-->
+    <!--  <BlogCard/>-->
+    <!--</Card>-->
+    <!--<Card colSpan="md:col-span-1 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Books I read">-->
+    <!--  <Books/>-->
+    <!--</Card>-->
   </main>
 </BaseLayout>
 
