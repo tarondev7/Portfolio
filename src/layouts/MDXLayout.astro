@@ -4,6 +4,7 @@ import IndexPageLayout from "./IndexPageLayout.astro";
 
 const {frontmatter} = Astro.props;
 const {title, description, image, startDate, tags, canonical} = frontmatter;
+console.log(frontmatter);
 // frontmatter is from MDX metadata for MD pages, we now use content for data now, we use frontmatter for backward compatibility
 ---
 

@@ -10,7 +10,7 @@ import { getAndGroupUniqueTags } from "../../lib/utils";
  **/
 export async function getStaticPaths() {
   const tagItemsMap = await getAndGroupUniqueTags();
-  console.log('tagItemsMap', tagItemsMap);
+  // console.log('tagItemsMap', tagItemsMap);
 
   const result = []
   tagItemsMap.forEach(
@@ -20,21 +20,20 @@ export async function getStaticPaths() {
       });
     }
   );
-  console.log('result', result, Object.keys(tagItemsMap));
   return result;
 }
 
 const {tag} = Astro.params;
-const {items} = Astro.props;
+const items = Astro.props?.items.sort((a, b) => b.data.startDate - a.data.startDate);
 ---
 <IndexPageLayout title={tag} description="A new dimension to access content of this website" subTitle={tag}>
- <div class="flex flex-col gap-3">
+ <div class="grid grid-cols-3 gap-3">
   {
-    items?.map((post) =>
+    items?.map((tag) =>
       <>
-        <ProjectCard url={`/posts/${post.slug}/`} heading={post.data.title} subheading={post.data.description}
-                     imagePath={post.data?.image?.url}
-                     altText={post.data?.image?.alt} dateStart={post.data.startDate}
+        <ProjectCard url={`/posts/${tag.slug}/`} heading={tag.data.title} subheading={tag.data.description}
+                     imagePath={tag.data?.image?.url}
+                     altText={tag.data?.image?.alt} dateStart={tag.data.startDate}
 
         />
       </>

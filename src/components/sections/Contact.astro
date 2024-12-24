@@ -2,11 +2,6 @@
 import Card from '../Card.astro'
 import {PROFILE} from "../../content/profileData";
 import { getCollection } from "astro:content";
-
-
-const books = await getCollection('books');
-
-console.log(books);
 ---
 
   <div class="h-full">
@@ -17,17 +12,6 @@ console.log(books);
     </address>
     <div class="mt-4 flex w-fit flex-col">
       <h2 class="text-gray-500">Socials</h2>
-      <ul class="list-inside list-disc">
-        {books.map(
-          (book) => (
-            <li>
-              <a href={`/books/${book.data.slug}`} class="hover:font-bold underline">{book.data.title}</a>
-              <span class="text-sm font-thin italic">- {book.data.author}</span>
-            </li>
-          )
-        )}
-
-      </ul>
     </div>
   </div>
 

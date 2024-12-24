@@ -25,6 +25,12 @@ const experienceCollection = defineCollection({
     endDate: z.date().optional(),
     company: z.string(),
     tags: z.array(z.string()).optional(),
+    image: z
+      .object({
+        url: z.string(),
+        alt: z.string(),
+      })
+      .optional(),
   }),
 });
 
@@ -59,6 +65,5 @@ const postCollection = defineCollection({
 export const collections = {
   projects: projectCollection,
   experiences: experienceCollection,
-  books: bookCollection,
   posts: postCollection,
 };
