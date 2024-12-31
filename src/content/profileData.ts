@@ -1,7 +1,7 @@
 export const PROFILE = {
   site: {
     SEO: {
-      title: "Welcome to TV ☺️",
+      title: "Welcome to TV 👨🏻‍💻",
       description: "",
     },
   },
@@ -73,24 +73,12 @@ export const PROFILE = {
   studies: [
     // studies, qualifications and certifications
     {
-      title: "Master of Applied Computing",
-      level: "Master",
+      title: "Bachelor of Electronic Engineering",
+      institution: "National Polytechnic University of Armenia"
     },
     {
-      title: "AWS Cloud Professional",
-      institution: "AWS",
-    },
-    {
-      title: "Neo4j Certified Professional",
-      institution: "Neo4j",
-    },
-    {
-      title: "ICAgile Certified Professional",
-      institution: "ICP",
-    },
-    {
-      title: "Full Stack Observability Practitioner",
-      institution: "New Relic",
+      title: "Secondary Education",
+      institution: "Gyumri, Secondary School",
     },
   ],
 };

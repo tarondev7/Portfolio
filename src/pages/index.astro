@@ -9,7 +9,6 @@ import ExperienceCard from '../components/sections/ExperienceCard.astro'
 import Projects from '../components/sections/Projects.astro'
 import StudyCard from '../components/sections/StudyCard.astro'
 import { PROFILE } from "../content/profileData";
-import BlogCard from '../components/sections/BlogCard.astro'
 import { Github, Send, Mail, Phone, FileIcon, ExternalLink, LinkedinIcon } from 'lucide-react'
 
 const SITE = PROFILE.site
@@ -84,34 +83,14 @@ const SITE = PROFILE.site
         </a>
         <span>{PROFILE.links.telegram.title}</span>
       </div>
-      <!--<div class="flex items-center justify-between text-center my-2">-->
-      <!--  <a href={PROFILE.links.github.url} aria-label="github profile" target="_blank">-->
-      <!--    <Button aria-label="github profile">-->
-      <!--      <Github/>-->
-      <!--      <span class="sr-only">GitHub Profile</span>-->
-      <!--    </Button>-->
-      <!--  </a>-->
-      <!--  <span>{PROFILE.links.github.title}</span>-->
-      <!--</div>-->
     </Card>
     <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-1" title="My time">
       <TimeZoneCard timezone={PROFILE.timezone} />
     </Card>
 
-
-
-    <!--<Card colSpan="lg:col-span-4 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2">-->
-    <!--  <div class="flex h-full flex-col justify-between">-->
-    <!--    <blockquote class="mt-6 border-l-2 pl-6 italic">-->
-    <!--      “{PROFILE.words[0]}”-->
-    <!--    </blockquote>-->
-    <!--    <p class="mt-2 text-xs"></p>-->
-    <!--  </div>-->
-    <!--</Card>-->
-    <!--<Card colSpan="md:col-span-1 lg:col-span-5" rowSpan="md:row-span-2 lg:row-span-2"-->
-    <!--      title="Education and Certificates">-->
-    <!--  <StudyCard/>-->
-    <!--</Card>-->
+    <Card colSpan="md:col-span-1 lg:col-span-9" rowSpan="md:row-span-2 lg:row-span-2" title="Education">
+      <StudyCard/>
+    </Card>
 
     <Card colSpan="md:col-span-1 lg:col-span-12" rowSpan="md:row-span-2 lg:row-span-2" title="Experiences">
       <ExperienceCard/>
